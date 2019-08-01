@@ -1,1 +1,2 @@
-# specifications
+# Geoschemas Specifications Repository
+This GeoSchemas repository to create tasks as well as rise ideas, issues and opportunities. Additionally, this repositories wiki will be used for meeting notes, issue discussion and notes for alignment to other vocabularies and ontologies. It is inspired by the [BioSchemas specifications repository](https://github.com/BioSchemas/specifications).
