@@ -1,0 +1,67 @@
+@prefix schema: <http://schema.org/> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dctype: <http://purl.org/dc/dcmitype/> .
+@prefix eli: <http://data.europa.eu/eli/ontology#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfa: <http://www.w3.org/ns/rdfa#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix snomed: <http://purl.bioontology.org/ontology/SNOMEDCT/> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix xsd1: <hhttp://www.w3.org/2001/XMLSchema#> .
+
+@prefix geoschemas: <http://geoschemas.org/> .
+
+
+geoschemas:FieldSite a rdfs:Class ;
+    rdfs:label "FieldSite" ;
+    rdfs:comment "A field site is a research site where where people conduct field research activities. Field research, field studies, or fieldwork is the collection of raw data outside a laboratory, library, or workplace setting." ;
+    rdfs:subClassOf geoschemas:ResearchSite .
+
+
+schema:GeoCircle a rdfs:Class ;
+    rdfs:label "GeoCircle" ;
+    rdfs:comment """A GeoCircle is a GeoShape representing a circular geographic area. As it is a GeoShape
+          it provides the simple textual property 'circle', but also allows the combination of postalCode alongside geoRadius.
+          The center of the circle can be indicated via the 'geoMidpoint' property, or more approximately using 'address', 'postalCode'.""" ;
+    rdfs:subClassOf schema:GeoShape .
+
+schema:GeoCoordinates a rdfs:Class ;
+    rdfs:label "GeoCoordinates" ;
+    rdfs:comment "The geographic coordinates of a place or event." ;
+    rdfs:subClassOf schema:StructuredValue .
+
+schema:GeoShape a rdfs:Class ;
+    rdfs:label "GeoShape" ;
+    dct:source <http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_rNews> ;
+    rdfs:comment "The geographic shape of a place. A GeoShape can be described using several properties whose values are based on latitude/longitude pairs. Either whitespace or commas can be used to separate latitude and longitude; whitespace should be used when writing a list of several such points." ;
+    rdfs:subClassOf schema:StructuredValue .
+
+schema:Place a rdfs:Class ;
+    rdfs:label "Place" ;
+    rdfs:comment "Entities that have a somewhat fixed, physical extension." ;
+    rdfs:subClassOf schema:Thing .
+
+geoschemas:ResearchActivity a rdfs:Class ;
+    rdfs:label "ResearchActivity" ;
+    rdfs:comment "A scientific research activity is something that occurs over a period of time and acts upon or with research entities; it may include consuming, processing, transforming, modifying, relocating, using, or generating entities." ;
+    rdfs:subClassOf prov:Activity .
+
+geoschemas:ResearchSite a rdfs:Class ;
+    rdfs:label "ResearchSite" ;
+    rdfs:comment "A research site is a place where people conduct research activities. Common research sites include universities, hospitals, research institutes, and field research locations." ;
+    schema:sameAs <http://www.wikidata.org/entity/Q57951700> ;
+    rdfs:subClassOf schema:Place .
+
+schema:Thing a rdfs:Class ;
+    rdfs:label "Thing" ;
+    rdfs:comment "The most generic type of item." .
